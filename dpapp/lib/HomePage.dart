@@ -1,3 +1,4 @@
+import 'package:dpapp/supplies.dart';
 import 'package:flutter/material.dart';
 import 'package:dpapp/weather/weather.dart';
 import 'package:dpapp/emergencyContacts.dart';
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => EmergencyContactsPage(),
                 ),
-              );// Navigate to Emergency Contacts screen
+              ); // Navigate to Emergency Contacts screen
             },
             child: Text('Emergency Contacts'),
           ),
@@ -45,6 +46,12 @@ class HomePage extends StatelessWidget {
           ElevatedButton(
             onPressed: () {
               // Navigate to Checklist screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Supplies(),
+                ),
+              );
             },
             child: Text('Checklist of Necessary Supplies'),
           ),
@@ -55,7 +62,7 @@ class HomePage extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => EvacuationCentersMap(),
                 ),
-              );// Navigate to Evacuation Centers screen
+              ); // Navigate to Evacuation Centers screen
             },
             child: Text('Find Evacuation Centers'),
           ),
