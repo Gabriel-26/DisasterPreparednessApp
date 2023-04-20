@@ -6,6 +6,7 @@ import 'package:dpapp/evacCenter.dart';
 import 'package:dpapp/supplies.dart';
 import 'package:dpapp/weather/weather.dart';
 import 'package:flutter/material.dart';
+import 'package:dpapp/communityAlert.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Disaster Preparedness App'),
+        title: Text('Crisis Control'),
       ),
       body: Column(
         children: [
@@ -78,10 +79,20 @@ class HomePage extends StatelessWidget {
                     },
                     Colors.amber,
                   ),
+                  // _buildButton(
+                  //     context, 'Road Navigation Updates', Icons.navigation, () {
+                  //   // TODO: Navigate to real-time updates map screen
+                  // }, Colors.green),
                   _buildButton(
-                      context, 'Road Navigation Updates', Icons.navigation, () {
+                      context, 'Community Alerts', Icons.dangerous, () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CommunityAlertsPage(),
+                      ),
+                    );
                     // TODO: Navigate to real-time updates map screen
-                  }, Colors.green),
+                  }, Colors.red),
                 ],
               ),
             ),
