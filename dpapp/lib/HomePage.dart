@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dpapp/distresscall.dart';
 import 'package:dpapp/emergencyContacts.dart';
 import 'package:dpapp/evacCenter.dart';
 import 'package:dpapp/supplies.dart';
@@ -27,73 +28,60 @@ class HomePage extends StatelessWidget {
                 crossAxisSpacing: 16,
                 children: [
                   _buildButton(
-                    context,
-                    'Get Real-Time Weather Updates',
-                    Icons.cloud,
-                        () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => GetRealTimeWeatherUpdates(),
-                        ),
-                      );
-                    }, Colors.blue
-                  ),
+                      context, 'Get Real-Time Weather Updates', Icons.cloud,
+                      () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => GetRealTimeWeatherUpdates(),
+                      ),
+                    );
+                  }, Colors.blue),
+                  _buildButton(context, 'Emergency Contacts', Icons.phone, () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EmergencyContactsPage(),
+                      ),
+                    );
+                  }, Colors.red),
+                  _buildButton(context, 'Checklist of Necessary Supplies',
+                      Icons.list_alt, () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Supplies(),
+                      ),
+                    );
+                  }, Colors.teal),
                   _buildButton(
-                    context,
-                    'Emergency Contacts',
-                    Icons.phone,
-                        () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EmergencyContactsPage(),
-                        ),
-                      );
-                    }, Colors.red
-                  ),
-                  _buildButton(
-                    context,
-                    'Checklist of Necessary Supplies',
-                    Icons.list_alt,
-                        () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Supplies(),
-                        ),
-                      );
-                    }, Colors.teal
-                  ),
-                  _buildButton(
-                    context,
-                    'Find Evacuation Centers',
-                    Icons.location_on,
-                        () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => EvacuationCentersMap(),
-                        ),
-                      );
-                    }, Colors.redAccent
-                  ),
+                      context, 'Find Evacuation Centers', Icons.location_on,
+                      () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => EvacuationCentersMap(),
+                      ),
+                    );
+                  }, Colors.redAccent),
                   _buildButton(
                     context,
                     'Send Distress Call',
                     Icons.warning,
-                        () {
-                      // TODO: Navigate to distress call screen
-                    }, Colors.amber,
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DistressCall(),
+                        ),
+                      );
+                    },
+                    Colors.amber,
                   ),
                   _buildButton(
-                    context,
-                    'Road Navigation Updates',
-                    Icons.navigation,
-                        () {
-                      // TODO: Navigate to real-time updates map screen
-                    }, Colors.green
-                  ),
+                      context, 'Road Navigation Updates', Icons.navigation, () {
+                    // TODO: Navigate to real-time updates map screen
+                  }, Colors.green),
                 ],
               ),
             ),
@@ -104,12 +92,12 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildButton(
-      BuildContext context,
-      String text,
-      IconData iconData,
-      VoidCallback onPressed,
-      Color color,
-      ) {
+    BuildContext context,
+    String text,
+    IconData iconData,
+    VoidCallback onPressed,
+    Color color,
+  ) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
