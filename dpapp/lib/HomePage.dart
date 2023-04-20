@@ -37,12 +37,12 @@ class HomePage extends StatelessWidget {
             },
             child: Text('Emergency Contacts'),
           ),
-          ElevatedButton(
-            onPressed: () {
-              // Navigate to Evacuation Routes screen
-            },
-            child: Text('Blank'),
-          ),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     // Navigate to Evacuation Routes screen
+          //   },
+          //   child: Text('Blank'),
+          // ),
           ElevatedButton(
             onPressed: () {
               // Navigate to Checklist screen
