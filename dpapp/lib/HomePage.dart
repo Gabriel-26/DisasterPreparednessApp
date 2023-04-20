@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => GetRealTimeWeatherUpdates(),
                         ),
                       );
-                    },
+                    }, Colors.blue
                   ),
                   _buildButton(
                     context,
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => EmergencyContactsPage(),
                         ),
                       );
-                    },
+                    }, Colors.red
                   ),
                   _buildButton(
                     context,
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => Supplies(),
                         ),
                       );
-                    },
+                    }, Colors.teal
                   ),
                   _buildButton(
                     context,
@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => EvacuationCentersMap(),
                         ),
                       );
-                    },
+                    }, Colors.redAccent
                   ),
                   _buildButton(
                     context,
@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
                     Icons.warning,
                         () {
                       // TODO: Navigate to distress call screen
-                    },
+                    }, Colors.amber,
                   ),
                   _buildButton(
                     context,
@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
                     Icons.navigation,
                         () {
                       // TODO: Navigate to real-time updates map screen
-                    },
+                    }, Colors.green
                   ),
                 ],
               ),
@@ -108,6 +108,7 @@ class HomePage extends StatelessWidget {
       String text,
       IconData iconData,
       VoidCallback onPressed,
+      Color color,
       ) {
     return ElevatedButton(
       onPressed: onPressed,
@@ -116,6 +117,7 @@ class HomePage extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
         ),
+        backgroundColor: color,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
