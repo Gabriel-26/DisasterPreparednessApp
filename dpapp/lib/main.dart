@@ -1,3 +1,4 @@
+import 'package:dpapp/emergencyContacts.dart';
 import 'package:flutter/material.dart';
 
 import 'HomePage.dart';
@@ -20,6 +21,9 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: HomePage(),
+      routes: {
+        '/call' : (context) => EmergencyContactsPage()
+      },
     );
   }
 }
