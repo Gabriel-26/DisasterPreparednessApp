@@ -37,14 +37,14 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   }, Colors.blue),
-                  _buildButton(context, 'Emergency Contacts', Icons.phone, () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => EmergencyContactsPage(),
-                      ),
-                    );
-                  }, Colors.red),
+                  // _buildButton(context, 'Emergency Contacts', Icons.phone, () {
+                  //   Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => EmergencyContactsPage(),
+                  //     ),
+                  //   );
+                  // }, Colors.red),
                   _buildButton(context, 'Checklist of Necessary Supplies',
                       Icons.list_alt, () {
                     Navigator.push(
